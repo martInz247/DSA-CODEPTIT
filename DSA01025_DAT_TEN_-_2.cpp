@@ -18,8 +18,6 @@ int n, k;
 char a[17];
 bool done = false;
 
-
-
 void init(){
     char st = 'A';
     for (int i = 1; i <= k; i++){
@@ -58,6 +56,7 @@ signed main() {
             display();
             sinh();
         }
+        done = false;
     }
     return 0;
 }

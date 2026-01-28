@@ -14,25 +14,12 @@ using namespace std;
 const int MOD = 1e9+7;
 const int INF = 1e18;
 
-int n, k, a[16], r[16];
+int n, k;
 bool done = false;
+int a[31];
 
 void init(){
     for (int i = 1; i <= k; i++) a[i] = i;
-}
-
-void input(){
-    for (int i = 1; i <= k; i++) cin >> r[i];
-}
-
-void dis(){
-    for (int i = 1; i <= k; i++) cout << a[i] << " ";
-    cout << endl;
-}
-
-bool check(){
-    for (int i = 1; i <= k; i++) if (a[i] != r[i]) return false;
-    return true;
 }
 
 void sinh(){
@@ -41,34 +28,45 @@ void sinh(){
         i--;
     }
     if (i){
-        ++a[i];
-        for (int j = i+1; j <= k; j++) a[j] = a[j-1] + 1;
+        a[i]++;
+        for (int j = i+1; j <= k; j++) a[j] = a[j-1]+1;
     }
     else done = true;
 }
 
-void solve(){
-    int cnt = 1;
-    while (!done){
-        if (check()) {
-        cout << cnt << endl;
-        return;
-        }
-        ++cnt;
-        sinh();
+void display(vector<string> s){
+    for (int i = 1; i <= k; i++){
+        cout << s[a[i]-1] << " ";
     }
+    cout << endl;
+}
+
+void in(){
+    for (int i = 1; i <= k; i++) cout << a[i] << " ";
+    cout << endl;
 }
 
 signed main() {
     fastio;
     
     int t = 1;
-    cin >> t;
+    // cin >> t;
     while (t--) {
         cin >> n >> k;
-        input();
         init();
-        solve();
+        set<string> ss;
+        for (int i = 0; i < n; i++){
+            string tmp;
+            cin >> tmp;
+            ss.insert(tmp);
+        }
+        vector <string> s;
+        for (string x : ss) s.push_back(x);
+        n = s.size();
+        while (!done){
+            display(s);
+            sinh();
+        }
     }
     return 0;
 }
