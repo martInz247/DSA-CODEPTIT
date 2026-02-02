@@ -1,0 +1,1 @@
+{"name":"Local: DSA06013_SO_LAN_XUAT_HIEN","url":"d:\\Programming\\CPP\\DSA-CODEPTIT\\DSA06013_SO_LAN_XUAT_HIEN.cpp","tests":[{"id":1770002923595,"input":"2\n7 2\n1 1 2 2 2 2 3\n7 4\n1 1 2 2 2 2 3","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CPP\\DSA-CODEPTIT\\DSA06013_SO_LAN_XUAT_HIEN.cpp","group":"local","local":true}

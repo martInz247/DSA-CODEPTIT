@@ -14,24 +14,24 @@ using namespace std;
 const int MOD = 1e9+7;
 const int INF = 1e18;
 
-int solve(int n, int k) {
-    if (n == 1) return 1;
-    int len = (1LL << n) - 1;
-    int mid = len/2+1;
-    if (k == mid) return n;
-    if (k < mid) return solve(n - 1, k);
-    return solve(n - 1, k - mid);
-}
-
 signed main() {
     fastio;
-
-    int t;
+    
+    int t = 1;
     cin >> t;
     while (t--) {
-        int n, k;
-        cin >> n >> k;
-        cout << solve(n, k) << endl;
+        int n, k; cin >> n >> k;
+        vector <int> v(n);
+        for (int &x : v) cin >> x;
+        sort(v.begin(), v.end());
+        int cnt = 0;
+        for (int i = 0; i < n - 1; i++){
+            for (int j = i+1; j < n; j++){
+                if (v[i]+v[j]==k) cnt++;
+                else if (v[i]+v[j] > k) break;
+            }
+        }
+        cout << cnt << endl;
     }
     return 0;
 }
