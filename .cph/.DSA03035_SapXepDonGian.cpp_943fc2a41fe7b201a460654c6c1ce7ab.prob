@@ -1,0 +1,1 @@
+{"name":"Local: DSA03035_SapXepDonGian","url":"d:\\Programming\\CPP\\DSA-CODEPTIT\\DSA03035_SapXepDonGian.cpp","tests":[{"id":1776071440671,"input":"5\n4 1 2 5 3","output":"1 2 5 3 4\n0 0 -2 1 1\n1 2 3 4 5\n0 0 0 0 0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CPP\\DSA-CODEPTIT\\DSA03035_SapXepDonGian.cpp","group":"local","local":true}

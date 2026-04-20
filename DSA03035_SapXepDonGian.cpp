@@ -20,21 +20,22 @@ signed main() {
     int t = 1;
     // cin >> t;
     while (t--) {
-        int n, k; cin >> n >> k;
-        vector <int> v(n);
-        for (int &x : v) cin >> x;
-        queue <int> q;
-        for (int i = 0; i < n; i++){
-            if (v[i] < 0) q.push(i);
-            if (!q.empty() && q.front() + k <= i) q.pop();
-            if (i >= k - 1){
-                if (q.empty()) cout << "0 ";
-                else {
-                    if (!q.empty()) cout << v[q.front()] << " ";
-                }
-                
-            }
+        int n; cin >> n;
+        int a[n+1], pos[n+1];
+        for (int i = 1; i <= n; i++) {
+            cin >> a[i];
+            pos[a[i]] = i;
         }
+        int mx = -1, k = 1;
+        for (int i = 1; i < n; i++){
+            if (pos[i] < pos[i+1]) {
+                k++;
+                mx = max(mx, k);
+            }
+            else k = 1;
+        }
+        cout << n - mx;
+
     }
     return 0;
 }

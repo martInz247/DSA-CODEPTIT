@@ -1,0 +1,1 @@
+{"name":"Local: CHELLO_HELLO_WORLD","url":"d:\\Programming\\CPP\\DSA-CODEPTIT\\CHELLO_HELLO_WORLD.cpp","tests":[{"id":1773757402288,"input":"5 2\n-8 1 4 -6 9","output":"1 3 4 2\n1 4 3 2\n3 1 4 2\n3 4 1 2\n4 1 3 2\n4 3 1 2"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\Programming\\CPP\\DSA-CODEPTIT\\CHELLO_HELLO_WORLD.cpp","group":"local","local":true}

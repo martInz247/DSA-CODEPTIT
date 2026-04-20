@@ -18,23 +18,18 @@ signed main() {
     fastio;
     
     int t = 1;
-    // cin >> t;
+    cin >> t;
     while (t--) {
-        int n, k; cin >> n >> k;
-        vector <int> v(n);
-        for (int &x : v) cin >> x;
-        queue <int> q;
+        int n; cin >> n;
+        int a[n];
+        for (int &x:a) cin >> x;
+        sort(a, a+n);
+        int sum = 0;
         for (int i = 0; i < n; i++){
-            if (v[i] < 0) q.push(i);
-            if (!q.empty() && q.front() + k <= i) q.pop();
-            if (i >= k - 1){
-                if (q.empty()) cout << "0 ";
-                else {
-                    if (!q.empty()) cout << v[q.front()] << " ";
-                }
-                
-            }
+            int j = (i % MOD * a[i] % MOD) % MOD;
+            sum = (sum % MOD + j) % MOD;
         }
+        cout << sum << endl;
     }
     return 0;
 }

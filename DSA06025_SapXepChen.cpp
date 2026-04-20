@@ -20,20 +20,19 @@ signed main() {
     int t = 1;
     // cin >> t;
     while (t--) {
-        int n, k; cin >> n >> k;
-        vector <int> v(n);
-        for (int &x : v) cin >> x;
-        queue <int> q;
+        int n; cin >> n;
+        vector<int> v(n);
+        for (int &x:v) cin >> x;
         for (int i = 0; i < n; i++){
-            if (v[i] < 0) q.push(i);
-            if (!q.empty() && q.front() + k <= i) q.pop();
-            if (i >= k - 1){
-                if (q.empty()) cout << "0 ";
-                else {
-                    if (!q.empty()) cout << v[q.front()] << " ";
-                }
-                
+            int key = v[i], j = i-1;
+            while (j>=0 && v[j] > key){
+                v[j+1] = v[j];
+                j--;
             }
+            v[j+1] = key;
+            cout << "Buoc " << i << ": ";
+            for (int c = 0; c <=i; c++) cout << v[c] << " ";
+            cout << endl;
         }
     }
     return 0;
